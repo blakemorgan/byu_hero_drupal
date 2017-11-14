@@ -1,7 +1,7 @@
 byu_hero_d8:
   label: BYU Hero Component
   category: Custom
-  template: templates/byu_hero_d8
+  template: templates/byu_hero
   regions:
     headline:
       label: Headline
