@@ -7,7 +7,7 @@ byu_hero_d8:
       label: Headline
     intro:
       label: Intro Text
-    read_more_href:
-      label: Read More Reference
-    read_more_text:
-      label: Read More Text
+    read_more:
+      label: Read More Reference (This should contain a single link)
+    classes:
+      label: Classes (put a text field here listing your classes OR a checkbox field with multiple/dropdown)
