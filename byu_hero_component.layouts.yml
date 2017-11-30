@@ -1,4 +1,4 @@
-byu_hero_d8:
+byu_hero:
   label: BYU Hero Component
   category: Custom
   template: templates/byu_hero
