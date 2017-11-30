@@ -1,0 +1,40 @@
+{{ attach_library('byu-hero-component') }}
+
+
+{# need to add image and other field support #}
+{% set my_attributes = create_attribute() %}
+{% set my_classes = '' %}
+
+            {% for field in content.classes %}
+                {% for i in 0..10  if field[i] is defined %}
+                    {% set my_classes = field[i]|e %}
+                {% endfor %}
+            {% endfor %}
+
+  {% for field in content.image %}
+        {% for i in 0..field|length if field[i] is defined %}
+            {% set image_source = field[i]|e %}
+        {% endfor %}
+    {% endfor %}
+
+{# <byu-hero-banner id="hero" image-source="{{ image_source }}"{{ my_attributes.addClass(my_classes).setAttribute('idtest', 'myUniqueId') }}> #}
+<byu-hero-banner id="hero" image-source="dark-image.jpg"{{ my_attributes.addClass(my_classes).setAttribute('idtest', 'myUniqueId') }}>
+{# old: kevin are these ids, image source and classes neccessary? update documentation and adjust this
+<byu-hero-banner id="hero" image-source="dark-image.jpg" class="side-image"> #}
+  {% for field in content.headline %}
+        {% for i in 0..field|length if field[i] is defined %}
+            <div slot="headline">{{ field[i] }}</div>
+        {% endfor %}
+    {% endfor %}
+   {% for field in content.intro %}
+        {% for i in 0..field|length if field[i] is defined %}
+            <div slot="intro-text">{{ field[i] }}</div>
+        {% endfor %}
+    {% endfor %}
+      {% for field in content.read_more %}
+        {% for i in 0..field|length if field[i] is defined %}
+            <div slot="read-more">{{ field[i] }}</div>
+        {% endfor %}
+    {% endfor %}
+
+</byu-hero-banner>
