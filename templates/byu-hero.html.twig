@@ -11,27 +11,41 @@
                 {% endfor %}
             {% endfor %}
 
-  {% for field in content.image %}
-        {% for i in 0..field|length if field[i] is defined %}
-            {% set image_source = field[i]|e %}
-        {% endfor %}
-    {% endfor %}
+{# 1. Get this working to take a single-value image field and get the image file source stripped out and set it below in byu-hero-banner element #}
+  {% for field in content.image_source %}
+      {% for i in 0..field|length if field[i] is defined %}
+          {% set image_source = field[i]|e %}
+      {% endfor %}
+  {% endfor %}
+
+
+{# 2. Do something similar to take a video embed field and get the youtube url stripped out and set it below in byu-hero-banner element #}
+{# Start this section with an IF it isn't empty #}
+
+{# 3. Add support for another kind of video field or a link field? Get the youtube url stripped out and set it below in byu-hero-banner element #}
+
+
+
 
 {# <byu-hero-banner id="hero" image-source="{{ image_source }}"{{ my_attributes.addClass(my_classes).setAttribute('idtest', 'myUniqueId') }}> #}
-<byu-hero-banner id="hero" image-source="dark-image.jpg"{{ my_attributes.addClass(my_classes).setAttribute('idtest', 'myUniqueId') }}>
-{# old: kevin are these ids, image source and classes neccessary? update documentation and adjust this
-<byu-hero-banner id="hero" image-source="dark-image.jpg" class="side-image"> #}
-  {% for field in content.headline %}
+
+{# when inserting the video-source, start with an IF there is a field in that section, since this is optional #}
+<byu-hero-banner id="hero" image-source="dark-image2.jpg" video-source="https://www.youtube.com/watch?v=uTJAeSttacU"  {{ my_attributes.addClass(my_classes).setAttribute('id', 'myUniqueId') }}>
+
+
+    {# old: kevin are these ids, image source and classes neccessary? update documentation and adjust this
+    <byu-hero-banner id="hero" image-source="dark-image.jpg" class="side-image"> #}
+    {% for field in content.headline %}
         {% for i in 0..field|length if field[i] is defined %}
             <div slot="headline">{{ field[i] }}</div>
         {% endfor %}
     {% endfor %}
-   {% for field in content.intro %}
+    {% for field in content.intro %}
         {% for i in 0..field|length if field[i] is defined %}
             <div slot="intro-text">{{ field[i] }}</div>
         {% endfor %}
     {% endfor %}
-      {% for field in content.read_more %}
+    {% for field in content.read_more %}
         {% for i in 0..field|length if field[i] is defined %}
             <div slot="read-more">{{ field[i] }}</div>
         {% endfor %}
