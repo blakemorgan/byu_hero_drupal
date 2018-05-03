@@ -10,7 +10,7 @@ https://github.com/byuweb/byu-hero-banner
 
 1. Installation will create image styles, breakpoints, a responsive image style, and a view mode.
 2. Go to the content type you wish to display through a BYU Hero Banner format, and go to Manage Display. At the bottom, enable the BYU Hero Image Style 2 format.
-3. Edit that display mode and drag your fields appropriately into the corresponding regions. Hide all labels.
+3. Edit that display mode, select the Layout 'BYU Hero' at the bottom of the screen and save. Drag your fields appropriately into the corresponding regions. Hide all labels.
 
 ### Field Types 
 Recommended Field Types:

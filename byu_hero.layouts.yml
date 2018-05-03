@@ -1,5 +1,5 @@
 byu_hero:
-  label: BYU Hero Component
+  label: BYU Hero
   category: Custom
   template: templates/byu_hero
   regions:
