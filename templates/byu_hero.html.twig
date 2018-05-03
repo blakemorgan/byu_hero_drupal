@@ -1,7 +1,9 @@
-{{ attach_library('byu-hero-component') }}
+{{ attach_library('byu_hero/byu-hero-component') }}
 
+{# {{ kint(content.image_source) }} #}
+{#{{ devel_dump() }}#}
 
-{# need to add image and other field support #}
+ {# need to add image and other field support #}
 {% set my_attributes = create_attribute() %}
 {% set my_classes = '' %}
 
@@ -11,26 +13,36 @@
                 {% endfor %}
             {% endfor %}
 
-{# 1. Get this working to take a single-value image field and get the image file source stripped out and set it below in byu-hero-banner element #}
+ {% set image_url = '' %}
   {% for field in content.image_source %}
       {% for i in 0..field|length if field[i] is defined %}
-          {% set image_source = field[i]|e %}
+          {% set image_url = field[i]['#markup'] %}
       {% endfor %}
   {% endfor %}
 
+ {% set video_url = '' %}
+  {% for field in content.video_source %}
+      {#{% for i in 0..field|length if field[i] is defined %}#}
+      {% if field[0] is defined %}
 
-{# 2. Do something similar to take a video embed field and get the youtube url stripped out and set it below in byu-hero-banner element #}
-{# Start this section with an IF it isn't empty #}
+          {% if field[0]['#type'] == 'link' %}
+              {# plain link url field #}
+              {% set video_url = field[0]['#url'].uri %}
 
-{# 3. Add support for another kind of video field or a link field? Get the youtube url stripped out and set it below in byu-hero-banner element #}
+          {%  elseif field[0]['#type'] == 'container' %}
+              {# video embed field  - to continue later to support other field types #}
+              {#{% set video_url = field[0]['children']['#url'] %}#}
 
+          {% endif %}
+          
+          {#{{ kint(field[0]) }}#}
+      {% endif %}
+  {% endfor %}
 
-
-
-{# <byu-hero-banner id="hero" image-source="{{ image_source }}"{{ my_attributes.addClass(my_classes).setAttribute('idtest', 'myUniqueId') }}> #}
 
 {# when inserting the video-source, start with an IF there is a field in that section, since this is optional #}
-<byu-hero-banner id="hero" image-source="dark-image2.jpg" video-source="https://www.youtube.com/watch?v=uTJAeSttacU"  {{ my_attributes.addClass(my_classes).setAttribute('id', 'myUniqueId') }}>
+<byu-hero-banner id="hero" image-source="..{{ image_url }}" video-source="{{  video_url }}" {{ my_attributes.addClass(my_classes, 'side-image', 'image-style-2', 'left-aligned').setAttribute('id', 'myUniqueId') }}>
+{#<byu-hero-banner id="hero" image-source="..{{ image_url }}" video-source="https://www.youtube.com/watch?v=uTJAeSttacU"  {{ my_attributes.addClass(my_classes, 'side-image', 'image-style-2', 'left-aligned').setAttribute('id', 'myUniqueId') }}>#}
 
 
     {# old: kevin are these ids, image source and classes neccessary? update documentation and adjust this

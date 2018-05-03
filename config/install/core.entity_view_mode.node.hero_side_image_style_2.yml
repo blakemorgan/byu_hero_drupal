@@ -1,0 +1,16 @@
+uuid: 561dd3a8-0d08-41a7-8d92-0c242f23c857
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - byu_hero
+  enforced:
+    module:
+      - byu_hero
+
+id: node.hero_side_image_style_2
+label: 'Hero Side Image Style 2'
+targetEntityType: node
+cache: true
+
