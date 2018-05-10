@@ -7,6 +7,6 @@ byu-hero-component:
     gpl-compatible: true
   css:
     theme:
-      https://cdn.byu.edu/byu-hero-banner/1.x.x/byu-hero-component.min.css: { type: external, minified: true }
+      https://cdn.byu.edu/byu-hero-banner/unstable/byu-hero-component.min.css: { type: external, minified: true }
   js:
-    https://cdn.byu.edu/byu-hero-banner/1.x.x/byu-hero-banner.min.js: { type: external, minified: true }
+    https://cdn.byu.edu/byu-hero-banner/unstable/byu-hero-banner.min.js: { type: external, minified: true }
