@@ -46,7 +46,7 @@
 
     {% for field in content.headline %}
         {% for i in 0..field|length if field[i] is defined %}
-            <div slot="headline">{{ field[i] }}</div>
+            <h2 slot="headline">{{ field[i] }}</h2>
         {% endfor %}
     {% endfor %}
     {% for field in content.intro %}
