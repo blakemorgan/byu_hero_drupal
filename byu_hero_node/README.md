@@ -22,8 +22,13 @@ The view will display the nodes you create in the "Hero Side Image Style 2" disp
   * light-image - Adjusts the formatting for bright-colored images.
   * dark-image - Adjusts the formatting for dark-colored images.
 
-
 Demos for these banners are found here: https://cdn.byu.edu/byu-hero-banner/1.x.x/demo/index.html
+
+### Ideal Image Sizes
+
+* title-only - Width: Viewport width, Height: 280px
+* video-hero, transparent-overlay, full-screen - Width: Viewport width, Height: 680px
+* side-image - 570px x 320px
 
 ## Module Dependencies
 
