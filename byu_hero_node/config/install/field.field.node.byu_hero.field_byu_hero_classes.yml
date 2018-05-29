@@ -9,8 +9,8 @@ field_name: field_byu_hero_classes
 entity_type: node
 bundle: byu_hero
 label: 'Classes'
-description: ''
-required: false
+description: 'Separate classes with a space. See the README for class options.'
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
