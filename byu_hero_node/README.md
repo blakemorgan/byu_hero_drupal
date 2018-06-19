@@ -29,27 +29,3 @@ Demos for these banners are found here: https://cdn.byu.edu/byu-hero-banner/1.x.
 * title-only - Width: Viewport width, Height: 280px
 * video-hero, transparent-overlay, full-screen - Width: Viewport width, Height: 680px
 * side-image - 570px x 320px
-
-## Module Dependencies
-
-- Core
-    - Field
-    - Field Layout
-    - Layout Discovery
-    - Menu UI
-    - Custom Menu Links
-    - Node
-    - Filter
-    - User
-    - System
-    - Path
-    - Views
-- BYU
-    - BYU Hero Component
-- Fields
-    - Manage Display
-- Field Types
-    - Link
-    - Text
-- Media
-    - IMCE File Manager
