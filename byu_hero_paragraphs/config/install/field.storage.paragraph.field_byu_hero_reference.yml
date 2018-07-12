@@ -6,7 +6,7 @@ dependencies:
     - paragraphs
   enforced:
     module:
-      - byu_hero_paragraph
+      - byu_hero_paragraphs
 id: paragraph.field_byu_hero_reference
 field_name: field_byu_hero_reference
 entity_type: paragraph
