@@ -72,12 +72,11 @@ content:
     region: video_source
   title:
     label: hidden
-    type: title
+    type: string
     weight: 0
     region: headline
     settings:
-      tag: h2
-      linked: true
+      linked: false
     third_party_settings: {  }
 hidden:
   created: true
